@@ -55,9 +55,18 @@ public class UserService {
     public List<User> findAllUsers() {
         Query query = entityManager.createQuery("SELECT u FROM User u");
         List<User> resultList = query.getResultList();
-        // unused
+
 
         return resultList;
+    }
+
+    public boolean checkPassword2(User user, String password) {
+        if(user == null)
+            return false;
+        if(StringUtils.isEmpty(password))
+            return false;
+
+        return user.getPassword().equals(hashEncodePassword(password));
     }
 
     public User findByLogin(String login) {
