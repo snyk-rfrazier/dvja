@@ -4,6 +4,7 @@ import com.appsecco.dvja.models.User;
 import com.appsecco.dvja.services.UserService;
 import org.apache.commons.lang.StringUtils;
 
+// comment
 public class UserAction extends BaseController {
 
     private UserService userService;
